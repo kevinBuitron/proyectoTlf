@@ -96,22 +96,22 @@ def analizar_lexico(script):
             if token in lookup:
                 category, desc = lookup[token]
                 resultado.append((token, category, f"Linea #{contadorI} Columna #{contadorJ}"))
-            if isIdentificadorVariable():
+            if isIdentificadorVariable(token):
                 category, desc= "Identificador Variable"
                 resultado.append((token, category, f"Liinea #{contadorI} Columna#{contadorJ}"))
-            if isIdentificadorMetodo():
+            if isIdentificadorMetodo(token):
                 category, desc= "Identificador Metodo"
                 resultado.append((token, category, f"Liinea #{contadorI} Columna#{contadorJ}"))
-            if isIdentificadorClase():
+            if isIdentificadorClase(token):
                 category, desc= "Identificador Clase"
                 resultado.append((token, category, f"Liinea #{contadorI} Columna#{contadorJ}"))
-            if isValorAsignacionEntero():
+            if isValorAsignacionEntero(token):
                 category, desc= "Asignacion Entero"
                 resultado.append((token, category, f"Liinea #{contadorI} Columna#{contadorJ}"))
-            if isValorAsignacionCaracteres():
+            if isValorAsignacionCaracteres(token):
                 category, desc= "Asignacion Caracteres"
                 resultado.append((token, category, f"Liinea #{contadorI} Columna#{contadorJ}"))
-            if isValorAsignacionBooleanos():
+            if isValorAsignacionBooleanos(token):
                 category, desc= "Asignacion Booleanos"
                 resultado.append((token, category, f"Liinea #{contadorI} Columna#{contadorJ}"))
     return resultado
